@@ -22,7 +22,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img className="object-cover object-center rounded" alt="A newspaper or news-related theme" src="https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=612x612&w=0&k=20&c=9pR2-nDBhb7cOvvZU_VdgkMmPJXrBQ4rB1AkTXxRIKM=" />
+          <img className="object-cover object-center rounded" alt="A newspaper or news-related theme" src="/news.svg" />
 
           </div>
         </div>

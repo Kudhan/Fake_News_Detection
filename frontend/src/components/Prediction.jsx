@@ -8,15 +8,20 @@ const Prediction = () => {
     setHeadline(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // You can integrate the logic for fake news detection here
-    // For now, it's just a dummy message
-    if (headline.toLowerCase().includes("fake")) {
-      setPrediction("Fake News");
-    } else {
-      setPrediction("Real News");
-    }
+    
+    // Sending POST request to Flask backend
+    const response = await fetch('http://127.0.0.1:5000/predict', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ headline: headline }),
+    });
+
+    const data = await response.json();
+    setPrediction(data.prediction);  // Set the prediction returned by Flask
   };
 
   return (
